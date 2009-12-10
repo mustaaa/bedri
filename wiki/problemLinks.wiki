@@ -9,6 +9,12 @@ http://acm.uva.es/problemset/files/v1-htm01.zip
 
 this is the link to the first problem set, you can find the problem descriptions for 116-unidirectional TSP, 177-Paper folding and 193-Graph coloring
 
+
 http://acm.uva.es/problemset/files/v2-htm01.zip
 
 problem description for 229-Scanner is here, by the time of this wiki entry my implementation is not finished yet.
+
+
+http://acmicpc-live-archive.uva.es/nuevoportal/
+
+This is the link to the complete archives
