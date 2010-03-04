@@ -41,7 +41,7 @@ public:
     bool insertBeforeCurPtr(const NODETYPE data) ; // creates a new node and links it before CurPtr, does not modify the CurPtr
     bool insertBeforeCurPtrAndDecrement(const NODETYPE data) ; // creates a new node and links it before CurPtr, then modifies CurPtr to be this new node
     bool setCurPtrToNull(); // after calling this current ptr is void
-    bool deleteCurPtr(); // deletes the node pointed by the curPtr, if there was a node after curPos before deletion, new curPos is that node, if not curPos is the lastPtr; namely the last node
+    bool deleteCurPtr(); // deletes the node pointed by the curPtr, if there was a node after curPos before deletion, new curPos is that node, if not node before the curPos is the lastPtr; namely the last node
 
 private:
     ListNode <NODETYPE> *firstPtr;
@@ -196,6 +196,8 @@ void List<NODETYPE>::print() const
     }
     cout << "NULL \n";
 }
+
+
 
 
 // function implementations for curPtr
@@ -382,7 +384,7 @@ bool List<NODETYPE>::setCurPtrToNull()
 template <typename NODETYPE>
 bool List<NODETYPE>::deleteCurPtr()     // always returns true         
 {
-    ListNode <NODETYPE> *tempPtr = curPtr->prevPtr;
+    ListNode <NODETYPE> *tempPtr = curPtr->nextPtr;
     if (curPtr)
     {
         if (curPtr->prevPtr)
@@ -401,6 +403,7 @@ bool List<NODETYPE>::deleteCurPtr()     // always returns true
         }
         else // curPtr is the last node
         {
+            tempPtr = curPtr->prevPtr;
             removeFromBack();
             curPtr = tempPtr;
             return true;
